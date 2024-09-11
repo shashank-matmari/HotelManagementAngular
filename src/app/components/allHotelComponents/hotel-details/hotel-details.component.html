@@ -1,0 +1,39 @@
+<div class="first-half" *ngIf="hotel">
+  <button class="back-btn" (click)="goBack()">
+    <i class="bi bi-arrow-left"></i>
+  </button>  
+  <div class="left">
+      <img [src]="hotel.img" [alt]="hotel.name" class="hotel-img">
+    </div>
+    <div class="right">
+      <h2>{{ hotel.name }}</h2>
+      <h4>{{ hotel.location }}</h4>
+      <p><strong>Description:</strong> {{ hotel.description }}</p>
+      <div class="amenities">
+        <h5>Amenities:</h5>
+        <span *ngFor="let amenity of hotel_amenities">
+          <i class="fa fa-check-circle ms-2" aria-hidden="true"></i> {{ amenity.name }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <label for="checkin">Check-In Date:</label>
+    <input type="date" id="checkin" [(ngModel)]="checkinDate">
+    
+    <label for="checkout">Check-Out Date:</label>
+    <input type="date" id="checkout" [(ngModel)]="checkoutDate">
+  
+    <button class="btn btn-primary" (click)="filterRooms()">Search</button>
+  </div>
+  
+  
+  <div class="rooms-div">
+    <app-room-card
+      *ngFor="let room of filteredRooms"
+      [room]="room"
+      (roomSelected)="onToggleRoom(room.room_id)">
+    </app-room-card>
+  </div>
+  

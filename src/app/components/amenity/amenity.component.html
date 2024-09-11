@@ -1,0 +1,73 @@
+<div class="container">
+  <h1 class="page-title">Amenities</h1>
+
+  <!-- Button to toggle between creating a new amenity and viewing the list -->
+  <div class="button-container">
+    <button class="btn btn-create" (click)="toggleForm()">
+      {{ showForm ? 'Back' : 'Create Amenity' }}
+    </button>
+  </div>
+
+  <!-- Form to create or update an amenity -->
+  <div *ngIf="showForm" class="form-section">
+    <h2 class="form-title">{{ isUpdating ? 'Update Amenity' : 'Create New Amenity' }}</h2>
+    <form [formGroup]="amenity" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name"><b>Name:</b></label>
+        <input id="name" type="text" formControlName="name" placeholder="Enter amenity name" class="form-control" />
+        <!-- Validation message for name -->
+        <div class="text-danger" *ngIf="amenity.get('name')?.invalid && amenity.get('name')?.touched">
+          Name is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description"><b>Description:</b></label>
+        <textarea
+          id="description"
+          formControlName="description"
+          placeholder="Enter a description of at least 10 characters"
+          class="form-control"
+        ></textarea>
+        <!-- Validation message for description -->
+        <div class="text-danger" *ngIf="amenity.get('description')?.invalid && amenity.get('description')?.touched">
+          Description should contain at least 10 characters
+        </div>
+      </div>
+      <button type="submit" class="btn btn-submit" [disabled]="!amenity.valid">
+        {{ isUpdating ? 'Update' : 'Submit' }}
+      </button>
+    </form>
+  </div>
+
+  <!-- Display list of amenities -->
+  <div *ngIf="!showForm" class="amenity-list">
+    <div class="amenity-card" *ngFor="let amenity of amenities; let i = index">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center amenity-title">
+            <h5 class="card-title" (click)="toggleDetails(i)">
+              {{ amenity.name }}
+            </h5>
+            <button class="btn-icon" (click)="toggleDetails(i)">
+              <i *ngIf="selectedAmenityIndex !== i" class="bi bi-chevron-down"></i>
+              <i *ngIf="selectedAmenityIndex === i" class="bi bi-chevron-up"></i>
+            </button>
+          </div>
+          <div class="action-buttons me-3">
+            <!-- Update and Delete buttons -->
+            <button type="button" class="btn btn-update" (click)="editAmenity(amenity)">
+              Update
+            </button>
+            <button type="button" class="btn btn-delete" (click)="deleteAmenity()">
+              Delete
+            </button>
+          </div>
+        </div>
+        <!-- Conditional display of amenity description -->
+        <div *ngIf="selectedAmenityIndex === i" class="amenity-description">
+          <p class="card-text">{{ amenity.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

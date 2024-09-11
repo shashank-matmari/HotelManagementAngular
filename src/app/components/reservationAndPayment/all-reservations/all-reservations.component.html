@@ -1,0 +1,27 @@
+<div class="container">
+  <!-- Header section with title and button -->
+  <header class="header">
+    <h1 class="title">All Reservations</h1>
+    <div class="search-container">
+      <button class="btn btn-primary" routerLink="/home">New Reservation</button>
+      <div class="search-div">
+        <input type="number" class="search-input" [(ngModel)]="searchQuery" placeholder="Search by Reservation ID" />
+        <button class="btn btn-search" [routerLink]="['/reservation/details/', searchQuery]">Search</button>
+      </div>
+    </div>
+    <div class="date-filter-bar">
+      <button class="btn btn-primary" (click)="ngOnInit()">Remove Filter</button>
+      <div class="date-filter">
+        <input type="date" class="date-input" [(ngModel)]="checkInDate" placeholder="Check-in Date" />
+        <input type="date" class="date-input" [(ngModel)]="checkOutDate" placeholder="Check-out Date" />
+        <button class="btn btn-info" (click)="filterByDates()">Filter</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Card container section -->
+  <section class="card-container">
+    <app-single-reservation *ngFor="let reservation of reservations" [reservation]="reservation">
+    </app-single-reservation>
+  </section>
+</div>

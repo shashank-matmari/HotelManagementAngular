@@ -1,0 +1,113 @@
+/* Container */
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: var(--secondry-background);
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    border: 1px solid var(--primary-text);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 550;
+}
+
+/* Form Layout */
+.reservation-form {
+    background-color: var();
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label */
+.form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-text);
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+/* Input Fields */
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--btn-disabled);
+    border-radius: 8px;
+    font-size: 16px;
+    background: var(--secondry-background);
+    color: var(--secondry-text);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Input Focus */
+.form-control:focus {
+    border-color: var(--primary-text);
+    outline: none;
+    box-shadow: 0 0 8px var(--primary-text);
+}
+
+/* Error Messages */
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+/* Button */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    color: var(--secondry-text);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Primary Button */
+.btn-primary {
+    background: var(--btn-color1);
+}
+
+/* Button Hover */
+.btn-primary:hover {
+    background: var(--btn-color2);
+    box-shadow: 0 4px 10px rgba(255, 255, 0, 0.3);
+}
+
+/* Disabled Button */
+.btn:disabled {
+    background: var(--btn-disabled);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.title {
+    font-size: 2rem;
+    color: var(--primary-text);
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,91 @@
+:host {
+  display: block;
+  padding: 20px;
+  background-color: var(--main-background);
+  color: var(--secondry-text);
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  margin: 20px auto;
+  max-width: 90%;
+}
+
+.table {
+  background-color: var(--secondry-background);
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+}
+
+.table th, .table td {
+  background-color: var(--secondry-background);
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--secondry-background);
+}
+
+.table thead {
+  background-color: #1f1f1f;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #2a2a2a;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #333;
+  color: #ffcc00; /* primary text color on hover */
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+}
+
+.table th {
+  background-color: #ffcc00; /* primary color */
+  color: #1f1f1f; /* secondary background */
+  text-transform: uppercase;
+}
+
+.table td {
+  color: #e6b800; /* accent color */
+  transition: color 0.3s ease-in-out;
+}
+
+.table td:first-child {
+  font-weight: bold;
+}
+
+.table td:last-child {
+  text-align: center;
+}
+
+.table tbody tr {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+  animation-delay: calc(var(--delay) * 0.1s);
+}
+
+.fade-in-table tr {
+  --delay: 0;
+}
+
+.fade-in-table tr:nth-child(1) { --delay: 1; }
+.fade-in-table tr:nth-child(2) { --delay: 2; }
+.fade-in-table tr:nth-child(3) { --delay: 3; }
+/* Continue for more rows if necessary */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

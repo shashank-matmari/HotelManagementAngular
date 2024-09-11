@@ -1,0 +1,319 @@
+/* .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  } */
+
+  /* .card {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s, z-index 0.3s;
+  }
+  
+  .card.hovered {
+    transform: scale(1.1);
+    z-index: 10;
+  }
+  
+  .card-content {
+    padding: 10px;
+  }
+   */
+
+   /* .card {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    margin: 20px;
+    perspective: 1000px;
+    transition: transform 0.6s, box-shadow 0.6s;
+    z-index: 1;
+}
+
+.card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+}
+
+.card.hovered .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+}
+
+.card-front {
+    background: linear-gradient(135deg, #f8f9fa, #e3f6f5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.card-back {
+    background: #9bba9f; 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border: 1px solid #7a8e7c;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    transform: rotateY(180deg);
+    padding: 20px;
+    text-align: left;
+    border-radius: 8px;
+    width: 125%;
+    height: 125%;
+}
+
+.card-text {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.payment-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 15px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.card-details {
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-update {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-update:hover {
+    background-color: #218838;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+.card.hovered {
+    transform: scale(1.1) translateZ(0);
+    z-index: 10;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+} */
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    margin: 20px;
+    perspective: 1000px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+}
+
+.card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+}
+
+/* .card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+}
+
+.card-front {
+    background: linear-gradient(135deg, #f8f9fa, #e3f6f5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-back {
+    background: #9bba9f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #7a8e7c;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: rotateY(180deg);
+    padding: 20px;
+    text-align: left;
+    gap: 15px;
+} */
+.card.hovered .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+}
+
+.card-front {
+    background: linear-gradient(135deg, #f8f9fa, #e3f6f5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.card-back {
+    background: #9bba9f; 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border: 1px solid #7a8e7c;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    transform: rotateY(180deg);
+    padding: 20px;
+    text-align: left;
+    border-radius: 8px;
+    width: 125%;
+    height: 125%;
+}
+
+.card-text {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.payment-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 15px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-details {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.button-group {
+    display: flex;
+    margin-top: 15px;
+    margin-left: -13px;
+}
+
+.btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary,
+.btn-update,
+.btn-delete {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-update {
+    background-color: #28a745;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-primary:hover,
+.btn-update:hover,
+.btn-delete:hover {
+    transform: scale(1.05);
+}
+
+.card.hovered .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* .card.hovered {
+    border-radius: 15px !important;
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+} */
+
+.card.hovered {
+    transform: scale(1.1) translateZ(0);
+    z-index: 10;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}

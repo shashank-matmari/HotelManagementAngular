@@ -1,0 +1,39 @@
+<nav class="navbar">
+    <div class="logo" routerLink="/">HotelGuru</div>
+    <div class="nav-links">
+        <div *ngIf="role==='Manager'">
+            <a class="nav-item" routerLink="/hotel/all">Hotels</a>
+            <a class="nav-item" routerLink="/roomtype/all">Room types</a>
+            <a class="nav-item" routerLink="/amenities/all">Amenities</a>
+            <a class="nav-item" routerLink="/reservation/all">Reservations</a>
+            <a class="nav-item" routerLink="/payments/all">Payments</a>
+            <a class="nav-item" routerLink="/feedback/all">Feedbacks</a>
+        </div>
+        <div *ngIf="role!=='Manager' && user">
+            <a class="nav-item" routerLink="/home">Home</a>
+            <a class="nav-item" routerLink="/feedback/all">Feedbacks</a>
+            <a class="nav-item"  [routerLink]="['/reservation', user.email]">Reservations</a>
+            <a class="nav-item"  [routerLink]="['/payments', user.email]">Payments</a>
+        </div>
+
+        <div *ngIf="role!==undefined" class="search-container" >
+            <input type="text" class="search-input" [(ngModel)]="searchQuery" (input)="searchHotels()"
+                [class.active]="showSearch" placeholder="Search by hotel name...">
+            <button class="search-btn" (click)="toggleSearch()">🔍</button>
+        </div>
+
+        <!-- Profile icon and dropdown -->
+        <div class="profile-icon-container ms-2" (click)="toggleProfileDropdown()" *ngIf="role!==undefined">
+            <!-- Font Awesome profile icon -->
+            <i class="fa-solid fa-circle-user profile-icon"></i>
+
+            <!-- Dropdown menu for Profile and Logout -->
+            <div class="profile-dropdown" *ngIf="showProfileDropdown">
+                <a routerLink="/profile" class="dropdown-item">Profile</a>
+                <a routerLink="/signup" class="dropdown-item">Add User</a>
+                <a (click)="logout()" class="dropdown-item">Logout</a>
+            </div>
+        </div>
+
+    </div>
+</nav>

@@ -1,0 +1,23 @@
+<div *ngIf="isLoading" class="loader">
+    <!-- Add your loading spinner or message here -->
+    <p>Loading hotels, please wait...</p>
+</div>
+
+<div *ngIf="!isLoading && hotels.length>0">
+<div class="filterbar">
+    <input type="text" placeholder="Search Hotels by location..." #filterByLocation class="search-input">
+    <button type="button" (click)="filterHotelsByLocation(filterByLocation.value)" class="search-button">
+        <span>Search</span>
+    </button>
+</div>
+
+
+<div class="cards-container">
+    <app-hotel *ngFor="let hotel of paginatedHotels" [hotel]="hotel"></app-hotel>
+</div>
+
+<div class="pagination-container">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+    <button (click)="nextPage()" [disabled]="currentPage * hotelsPerPage >= hotels.length">Next</button>
+</div>
+</div>

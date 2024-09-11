@@ -1,0 +1,91 @@
+<div *ngIf="loading" class="loading-spinner">
+    Loading...
+</div>
+
+<div class="details">
+    <div class="container" *ngIf="!loading">
+        <div class="d-flex justify-content-between">
+            <button class="btn btn-primary" (click)="goBack()">Back</button>
+            <h2>Edit Hotel Details</h2>
+        </div>
+    
+        <!-- Hotel Details Form -->
+        <form [formGroup]="hotelForm" (ngSubmit)="updateHotel()">
+            <div class="form-group">
+                <label for="name">Hotel Name</label>
+                <input id="name" class="form-control" formControlName="name" type="text">
+            </div>
+    
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input id="location" class="form-control" formControlName="location" type="text">
+            </div>
+    
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" class="form-control" formControlName="description"></textarea>
+            </div>
+    
+            <button class="btn btn-success" type="submit">Update Hotel</button>
+        </form>
+    
+        <hr>
+    
+        <!-- Rooms Section -->
+        <h3>Rooms in this Hotel</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Room Number</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Max Occupancy</th>
+                    <th>Price per Night</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let room of hotel.rooms">
+                    <td>{{ room.room_number }}</td>
+                    <td>{{ room.room_type.type_name }}</td>
+                    <td>{{ room.room_type.description }}</td>
+                    <td>{{ room.room_type.max_occupancy }}</td>
+                    <td>{{ room.room_type.price_per_night| currency }}</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <!-- Add Room Form -->
+        <h4>Add a New Room</h4>
+        <form [formGroup]="roomForm" (ngSubmit)="addRoom()">
+            <div class="form-group">
+                <label for="type_name">Room Number</label>
+                <input id="type_name" class="form-control" formControlName="room_number" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="type_name">Room Type id</label>
+                <input id="type_name" class="form-control" formControlName="room_type_id" type="text">
+            </div>
+    
+            <button class="btn btn-primary" type="submit">Add Room</button>
+        </form>
+    
+        <hr>
+    
+        <!-- Amenities Section -->
+        <h3>Amenities in this Hotel</h3>
+        <ul>
+            <li *ngFor="let amenity of hotel.amenities">{{ amenity.name }}</li>
+        </ul>
+    
+        <!-- Add Amenity Form -->
+        <h4>Add an Amenity</h4>
+        <form [formGroup]="amenitiesForm" (ngSubmit)="addAmenity()">
+            <div class="form-group">
+                <label for="amenity_id">Amenity Id</label>
+                <input id="amenity_id" class="form-control" formControlName="amenity_id" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Add Amenity</button>
+        </form>
+    </div>
+</div>

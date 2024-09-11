@@ -1,0 +1,134 @@
+<!-- <p>single-reservation works!</p> -->
+<!-- <div class="card mb-4 ms-5" style="width: 18rem;" [ngClass]="{'selected': reservation.reservation_id==selectedIndex}">
+    <div class="card-body" >
+        
+        <h5 class="card-title" style="text-align: center; background-color: darkgrey;">{{reservation.reservation_id}}</h5>
+        <p class="card-text">Name: {{reservation.guest_name}}</p>
+        <p class="card-text">Phone Number: {{reservation.guest_phone}}</p>
+
+        <div class="button-group">
+            <button class="btn btn-primary" (click)="goToReservationDetails(reservation.reservation_id)">Details</button>
+            <button class="btn btn-danger" (click)="deleteReservation()">Delete</button>
+        </div>
+
+
+    </div>
+</div> -->
+
+<!-- <div class="card"
+     [class.hovered]="isHovered"
+     (mouseenter)="onMouseEnter()"
+     (mouseleave)="onMouseLeave()">
+  <div class="card-content">
+    <h3>{{ reservation.reservation_id }}</h3>
+    <p *ngIf="isHovered">{{ reservation.guest_name }}</p>
+    <p *ngIf="isHovered">{{ reservation.guest_phone }}</p>
+    <p *ngIf="isHovered">{{ reservation.guest_email }}</p>
+  </div>
+</div> -->
+
+<!-- <div class="card"
+     [class.hovered]="isHovered"
+     (mouseenter)="onMouseEnter()"
+     (mouseleave)="onMouseLeave()">
+  <div class="card-inner">
+    <div class="card-front">
+      <h3>{{ reservation.reservation_id }}</h3>
+    </div>
+    <div class="card-back">
+      <p>{{ reservation.guest_name }}</p>
+      <p>{{ reservation.guest_phone }}</p>
+      <p>{{ reservation.guest_email}}</p>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="card" [class.hovered]="isClicked" (click)="onCardClick($event)">
+  <div class="card-inner">
+    <div class="card-front" style="background-color: #e3f6f5;">
+      <p class="card-text"> Reservation Id: {{ reservation.reservation_id }}</p> <br>
+      <img [src]="paymentImage"
+        style="width: 125px;height: 100px; border-radius: 50%; margin-left: auto; margin-right: auto;" alt="...">
+    </div>
+    <div class="card-back" style="display: table; font-size: small; background-color: darkturquoise; ">
+      <div >
+      <p style="font-size: xx-small;">
+        Name : {{ reservation.guest_name }} <br>
+        Phone No : {{ reservation.guest_phone }} <br>
+        Email Id : {{ reservation.guest_email }} <br>
+        Check-in : {{ reservation.check_in_date}} <br>
+        Check-out: {{ reservation.check_out_date}} <br>
+        Room No :{{ reservation.room_id }}
+      </p>
+      <div class="button-group">
+        <button class="button-group, btn btn-success" (click)="updateReservation(reservation.reservation_id)">Update</button>
+        <button class="button-group, btn btn-danger" (click)="deleteReservation(reservation.reservation_id)">Delete</button>
+      </div>
+    </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="card" [class.hovered]="isClicked" (click)="onCardClick($event)">
+  <div class="card-inner">
+    <div class="card-front">
+      <p class="card-text">Reservation ID: {{ reservation.reservation_id }}</p>
+      <img [src]="paymentImage" alt="Payment Image" class="payment-image">
+    </div>
+    <div class="card-back">
+      <p class="card-details">
+        Name: {{ reservation.guest_name }} <br>
+        Phone No: {{ reservation.guest_phone }} <br>
+        Email: {{ reservation.guest_email }} <br>
+        Check-in: {{ reservation.check_in_date }} <br>
+        Check-out: {{ reservation.check_out_date }} <br>
+        Room No: {{ reservation.room_id }}
+      </p>
+      <div class="button-group">
+        <button class="btn btn-primary" (click)="goToReservationDetails(reservation.reservation_id)">
+          Details
+        </button>
+        <button class="btn btn-update" (click)="updateReservation(reservation.reservation_id)">
+          Update
+        </button>
+        <button class="btn btn-delete" (click)="deleteReservation(reservation.reservation_id)">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="card" [class.hovered]="isClicked" (click)="onCardClick($event)">
+  <div class="card-inner">
+    <div class="card-front">
+      <p class="card-text">Reservation ID: {{ reservation.reservation_id }}</p>
+      <img [src]="paymentImage" alt="Payment Image" class="payment-image">
+    </div>
+    <div class="card-back">
+      <p class="card-details">
+        Name: {{ reservation.guest_name }} <br>
+        Phone No: {{ reservation.guest_phone }} <br>
+        Email: {{ reservation.guest_email }} <br>
+        Check-in: {{ reservation.check_in_date }} <br>
+        Check-out: {{ reservation.check_out_date }} <br>
+        Room No: {{ reservation.room_id }}
+      </p>
+      <div class="button-group">
+        <button class="btn btn-primary me-1" (click)="goToReservationDetails(reservation.reservation_id)">
+          Details
+        </button>
+        <button class="btn btn-update me-1" (click)="updateReservation(reservation.reservation_id)" *ngIf="role=='Manager'">
+          Update
+        </button>
+        <button class="btn btn-delete" (click)="deleteReservation(reservation.reservation_id)" *ngIf="role=='Manager'">
+          Delete
+        </button>
+        <button class="btn btn-update" (click)="giveFeedback(reservation.reservation_id)" *ngIf="role=='User'">
+          Give Feedback
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-pop-up [isVisible]="showPopup" [messageTitle]="popupTitle" [messageBody]="popupMessage"></app-pop-up>
+

@@ -1,0 +1,22 @@
+<div class="landing-page">
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="header">
+    <h1>Welcome to our Hotel Guru</h1>
+    <p>One destination for all hotel bookings.</p>
+    <p>Please login to manage your reservations and services.</p>
+    <button class="get login-button" (click)="scrollToLogin()">Login Now</button>
+    <div class="image-container">
+    </div>
+  </div>
+</div>
+<div #loginSection id="loginSection">
+  <app-login></app-login>
+</div>
+<div>
+  <app-about></app-about>
+</div>
+<div>
+  <app-contact-us></app-contact-us>
+</div>

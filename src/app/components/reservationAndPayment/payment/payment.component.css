@@ -1,0 +1,251 @@
+/* html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; 
+  font-family: Arial, sans-serif;
+}
+
+.main-div{
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-form {
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #f9f9f9;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px; 
+}
+
+/* Button group styling */
+/*.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+/* Pay Now and Pay Later button styling */
+/* .pay-now-button,
+.pay-later-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 3px;
+  width: 48%;
+}
+
+.pay-now-button:hover,
+.pay-later-button:hover {
+  background-color: #0069d9;
+}
+
+.pay-later-button {
+  background-color: #6c757d;
+}
+
+.pay-later-button:hover {
+  background-color: #5a6268;
+} */
+
+/* Submit button styling */
+/* button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  width: 100%;
+  margin-top: 15px; /* Added margin to separate from other buttons */
+/* } */
+
+/* Submit button hover effect */
+/* button[type="submit"]:hover {
+  background-color: #0069d9;
+} */
+
+
+/*@media (max-width: 768px) {
+  .payment-form {
+    padding: 10px; 
+  }
+} */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap'); 
+
+/* Body and Background */
+:host{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--secondry-background); /* Dark background theme */
+  font-family: 'Open Sans', sans-serif;
+  color: var(--secondry-text);
+}
+
+/* Main Container */
+.main-div {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form Styles */
+.payment-form {
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 8px;
+  background-color: var(--main-background); /* Darker form background */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+  animation: slideInUp 1s ease-in-out;
+  position: relative;
+  z-index: 2;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--primary-text);
+  letter-spacing: 1px;
+}
+
+/* Input Styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--primary-text);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--primary-text);
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: var(--secondry-background);
+  color: var(--secondry-text);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-text);
+  box-shadow: 0 0 8px var(--primary-text); /* Glowing effect on focus */
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+/* Button Styles */
+.pay-now-button,
+.pay-later-button {
+  background: var(--btn-color1);
+  color: var(--secondry-text);
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 0.3s ease, background 0.3s ease;
+  width: 48%;
+}
+
+.pay-now-button:hover {
+  transform: translateY(-3px); /* Button lift on hover */
+  background: var(--btn2-hover);
+}
+
+.pay-later-button {
+  background: var(--btn-color2);
+}
+
+.pay-later-button:hover {
+  transform: translateY(-3px);
+  background: var(--btn2-hover);
+}
+
+/* Responsive for Small Devices */
+@media (max-width: 768px) {
+  .payment-form {
+    padding: 20px;
+  }
+
+  .pay-now-button,
+  .pay-later-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+}
+
+/* Fade-in animation */
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

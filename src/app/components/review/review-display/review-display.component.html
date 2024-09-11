@@ -1,0 +1,30 @@
+<div *ngIf="isLoading" class="loader">
+    <!-- Add your loading spinner or message here -->
+    <p>Loading reviews, please wait...</p>
+</div>
+<div *ngIf="!isLoading">
+    <button (click)="goBack()" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Back
+      </button>
+    <div class="mt-4">
+        <h4>All Reviews</h4>
+        <div *ngFor="let review of reviews" class="card mb-2">
+          <div class="card-body">
+            <h5 class="card-title">
+              <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+                <i class="bi"
+                   [ngClass]="{
+                     'bi-star-fill': review.rating >= star,
+                     'bi-star': review.rating < star
+                   }">
+                </i>
+              </ng-container>
+            </h5>
+            <p class="card-text">{{ review.comment }}</p>
+            <p class="card-desc">Reviewed on {{ review.review_date | date }}</p>
+            <!-- <button class="btn btn-primary btn-sm" (click)="editReview(review)">Edit</button>
+            <button class="btn btn-danger btn-sm ms-2" (click)="deleteReviewById(review.review_id)">Delete</button> -->
+          </div>
+        </div>
+      </div>
+</div>

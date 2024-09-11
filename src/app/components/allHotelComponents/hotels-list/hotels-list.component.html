@@ -1,0 +1,44 @@
+<div *ngIf="loading" class="loading-spinner">
+    Loading...
+  </div>
+  <div class="container" *ngIf="!loading">
+    <div class="d-flex justify-content-between">
+      <button class="btn btn-primary back" (click)="goBack()">
+        <i class="bi bi-arrow-left"></i> Back
+      </button>
+      <button class="btn btn-primary" [routerLink]="['/hotel/create']">Create Hotel</button>
+    </div>
+  
+    <!-- Hotels List -->
+    <div *ngIf="hotels && hotels.length > 0">
+      <h2>Available Hotels</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Hotel ID</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hotel of hotels; let i = index">
+            <td>{{ hotel.hotel_id }}</td>
+            <td>{{ hotel.name }}</td>
+            <td>{{ hotel.location }}</td>
+            <td>
+              <button [routerLink]="['/hotel/details/', hotel.hotel_id]" class="btn btn-info">
+                <i class="bi bi-pencil-fill"></i> Edit
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- No hotels available message -->
+    <div *ngIf="!hotels || hotels.length === 0">
+      <p>No hotels available. Please add a hotel.</p>
+    </div>
+  </div>
+  

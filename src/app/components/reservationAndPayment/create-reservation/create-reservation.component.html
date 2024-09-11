@@ -1,0 +1,76 @@
+<div style="background-color: var(--main-background);">
+    <button (click)="goBack()" class="btn btn-primary mt-2 ms-2">
+        <i class="bi bi-arrow-left"></i> Back
+    </button>
+    <div class="container">
+        <h1 class="title">New Reservation</h1>
+        <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()" class="reservation-form">
+            <div class="form-group">
+                <label for="hotelName">Hotel Name:</label>
+                <input id="hotelName" formControlName="hotel_name" class="form-control">
+                <div class="error" *ngIf="reservationForm.get('hotel_name')?.invalid && reservationForm.get('hotel_name')?.touched">
+                    Hotel Name is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input id="name" formControlName="guest_name" class="form-control">
+                <div class="error" *ngIf="reservationForm.get('guest_name')?.invalid && reservationForm.get('guest_name')?.touched">
+                    Name is required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input id="phoneNumber" formControlName="guest_phone" class="form-control">
+                <div class="error" *ngIf="reservationForm.get('guest_phone')?.invalid && reservationForm.get('guest_phone')?.touched">
+                    Phone number is required
+                </div>
+                <div class = "error" *ngIf="reservationForm.get('guest_phone')?.errors?.['pattern']">Phone number should be 10 digits only</div>
+            </div>
+
+            <div class="form-group">
+                <label for="emailId">Email ID:</label>
+                <input id="emailId" formControlName="guest_email" class="form-control">
+                <div class="error" *ngIf="reservationForm.get('guest_email')?.invalid && reservationForm.get('guest_email')?.touched">
+                    Email Id is required
+                </div>
+                <div class = "error" *ngIf="reservationForm.get('guest_email')?.errors?.['email']">Invalid Email!</div>
+            </div>
+
+            <div class="form-group">
+                <label for="checkInDate">Check-In Date:</label>
+                <input id="checkInDate" type="date" formControlName="check_in_date" class="form-control">
+                <div class="error" *ngIf="reservationForm.get('check_in_date')?.invalid && reservationForm.get('check_in_date')?.touched">
+                    Check-In date is required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="checkOutDate">Check-Out Date:</label>
+                <input id="checkOutDate" type="date" formControlName="check_out_date" class="form-control">
+                <div class="error" *ngIf="reservationForm.get('check_out_date')?.invalid && reservationForm.get('check_out_date')?.touched">
+                    Check-Out date is required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="roomId">Room ID:</label>
+                <input id="roomId" formControlName="room_id" class="form-control">
+                <div class="error" *ngIf="reservationForm.get('room_id')?.invalid && reservationForm.get('room_id')?.touched">
+                    Room Id is required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Amount:</label>
+                <input id="amount" formControlName="amount" class="form-control">
+                <div class="error" *ngIf="reservationForm.get('amount')?.invalid && reservationForm.get('amount')?.touched">
+                    Amount is required
+                </div>
+            </div>
+
+            <button class="btn btn-primary mt-3" type="submit" [disabled]="reservationForm.invalid">Submit</button>
+        </form>
+    </div>
+</div>

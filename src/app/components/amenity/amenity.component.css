@@ -1,0 +1,265 @@
+/* Body Styling */
+:host {
+  display: block;
+  padding: 20px;
+  background-color: var(--main-background);
+  color: var(--secondry-text);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Container Styling */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  padding: 30px;
+  background-color: var(--secondry-background);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 1s ease;
+  transition: transform 0.3s ease;
+}
+
+/* Page Title */
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-text);
+  text-align: center;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary-text);
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* Buttons Styling */
+.btn {
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  color: var(--secondry-text);
+}
+
+.btn-create {
+  background: var(--btn-color1);
+  box-shadow: 0 8px 20px rgba(23, 162, 184, 0.3);
+  margin-right: 15px;
+}
+
+.btn-create:hover {
+  background: var(--btn2-hover);
+  transform: translateY(-5px);
+}
+
+.btn-back {
+  background: var(--btn-color2);
+  box-shadow: 0 8px 20px rgba(255, 69, 0, 0.3);
+}
+
+.btn-back:hover {
+  background: var(--btn2-hover);
+  transform: translateY(-5px);
+}
+
+/* Amenity List */
+.amenity-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Amenity Card Styling */
+.amenity-card {
+  background-color: var(--main-background);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.amenity-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Card Title */
+.amenity-title h5 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin: 0;
+  cursor: pointer;
+}
+
+.amenity-title h5:hover {
+  color: var(--btn-color1);
+}
+
+/* Description Text */
+.amenity-description {
+  margin-top: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: var(--secondry-text);
+  line-height: 1.6;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-update, .btn-delete {
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-update {
+  background-color: #ffcc00;
+  color: var(--primary-text-text);
+}
+
+.btn-update:hover {
+  background-color: #e6b800;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background-color: #b02a37;
+}
+
+/* Form Section */
+.form-section {
+  background: var(--secondry-background);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--secondry-text);
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: var(--secondry-background);
+  color: var(--secondry-text);
+}
+
+.form-control::placeholder {
+  color: #bbb;
+}
+
+.btn-submit {
+  background: var(--btn-color1);
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.4s ease;
+}
+
+.btn-submit:hover {
+  background: var(--btn2-hover);
+  transform: translateY(-5px);
+}
+
+/* Text Danger */
+.text-danger p {
+  color: #F44336;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* Button Toggle Icon Styling */
+.btn-icon {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--secondry-text);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-left: 10px;
+}
+
+.btn-icon:hover {
+  color: var(--btn-color1);
+}
+
+.bi-chevron-down, .bi-chevron-up {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.bi-chevron-down {
+  transform: rotate(0deg);
+}
+
+.bi-chevron-up {
+  transform: rotate(180deg);
+}
+
+.amenity-card:hover .bi-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .button-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .btn {
+      width: 100%;
+      margin: 5px 0;
+  }
+
+  .amenity-list {
+      grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,135 @@
+/* Background Image Container */
+.background-container {
+    background-color: var(--main-background);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #918989;
+    position: fixed;
+    top: 90px;
+    margin-left: 190px;
+    margin-right: 10px;
+  }
+  
+  .back-btn:hover {
+    color: #ffcc00;
+  }
+
+/* Container Styles */
+.form-container {
+    max-width: 900px;
+    width: 100%;
+    padding: 40px;
+    background: var(--primary-text-text); /* Slightly transparent white */
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    color: #333;
+}
+
+/* Form Styles */
+.hotel-form .form-group {
+    margin-bottom: 25px;
+}
+
+.hotel-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    color: #ffcc00; /* Primary accent color */
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.hotel-form input,
+.hotel-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    background-color: #2a2a2a; /* Darker background for inputs */
+    color: #fff;
+    transition: box-shadow 0.3s ease;
+}
+
+.hotel-form input:focus,
+.hotel-form textarea:focus {
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); /* Highlight with primary accent color */
+    outline: none;
+}
+
+.hotel-form textarea {
+    height: 180px;
+    resize: vertical;
+}
+
+/* Button Styles */
+.add-btn,
+.remove-btn,
+.submit-btn {
+    padding: 14px 22px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.add-btn {
+    background: linear-gradient(45deg, #ffcc00, #ff9800); /* Gradient with primary color */
+}
+
+.remove-btn {
+    background: linear-gradient(45deg, #e53935, #c62828);
+}
+
+.submit-btn {
+    background: linear-gradient(45deg, #4caf50, #2e7d32);
+}
+
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.add-btn:hover,
+.remove-btn:hover,
+.submit-btn:hover {
+    background-color: #ffcc00; /* Hover state matches primary color */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Error Message Styles */
+.error {
+    color: #ff5722; /* Brighter error color */
+    font-size: 0.9rem;
+    margin-top: 6px;
+}
+
+/* High-contrast mode adjustments */
+@media (forced-colors: active) {
+    .form-container, .hotel-form input, .hotel-form textarea, .add-btn, .remove-btn, .submit-btn {
+        color: CanvasText;
+        background-color: Canvas;
+        border-color: GrayText;
+    }
+}

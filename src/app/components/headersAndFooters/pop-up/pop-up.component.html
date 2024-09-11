@@ -1,0 +1,8 @@
+<div class="popup" *ngIf="isVisible">
+    <div class="popup-content">
+      <h3>{{ messageTitle }}</h3>
+      <p>{{ messageBody }}</p>
+      <button (click)="closePopup()">Close</button>
+    </div>
+  </div>
+  

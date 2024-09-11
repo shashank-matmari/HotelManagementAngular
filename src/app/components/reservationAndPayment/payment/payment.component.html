@@ -1,0 +1,46 @@
+<div class="container main-div mt-3">
+  <form [formGroup]="paymentForm" class="payment-form">
+    <div class="form-group">
+      <div class="form-group">
+        <label for="reservation_id">Reservation:</label>
+        <input [value]="reservationId" type="number" id="reservation_id" formControlName="reservation_id" required
+          readonly>
+      </div>
+      <label for="payment_type">Payment Method:</label>
+      <select id="payment_type" formControlName="payment_type" required>
+        <option *ngFor="let method of paymentMethods" [value]="method">{{ method }}</option>
+      </select>
+    </div>
+
+    <div *ngIf="paymentForm.value.payment_type === 'Credit Card' || paymentForm.value.payment_type === 'Debit Card'">
+      <div class="form-group">
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" id="cardNumber" formControlName="cardNumber" required>
+      </div>
+      <div class="form-group">
+        <label for="expirationDate">Expiration Date:</label>
+        <input type="text" id="expirationDate" formControlName="expirationDate" required>
+      </div>
+      <div class="form-group">
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" formControlName="cvv" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" formControlName="amount" required readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="notes">Notes:</label>
+      <textarea id="notes" formControlName="notes"></textarea>
+    </div>
+
+    <div class="button-group">
+      <button type="button" class="pay-now-button" (click)="onSubmit(true)">Pay Now</button>
+      <button type="button" class="pay-later-button" (click)="onSubmit(false)">Pay Later</button>
+    </div>
+  </form>
+</div>
+<app-pop-up [isVisible]="showPopup" [messageTitle]="popupTitle" [messageBody]="popupMessage"></app-pop-up>

@@ -1,0 +1,122 @@
+.details{
+    background-color: var(--secondry-background);
+}
+.container {
+    background-color: var(--main-background);
+    color: var(--secondry-text);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  h2, h3, h4 {
+    color: var(--primary-text);
+    margin-bottom: 15px;
+  }
+  
+  /* Loading Spinner */
+  .loading-spinner {
+    color: var(--primary-text);
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  /* Form Styles */
+  form {
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  input, textarea {
+    background-color: var(--secondry-background);
+    color: var(--secondry-text);
+    border: 1px solid var(--primary-text);
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--btn-color1);
+    box-shadow: 0px 0px 8px var(--btn-color1);
+  }
+  
+  label {
+    color: var(--primary-text);
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  
+  /* Button Styles */
+  button {
+    background-color: var(--btn-color1);
+    color: var(--secondry-text);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--btn2-hover);
+    transform: scale(1.05);
+  }
+  
+  button:disabled {
+    background-color: var(--btn-disabled);
+    cursor: not-allowed;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    background-color: var(--secondry-background);
+    color: var(--secondry-text);
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid var(--primary-text);
+    color: #ffffff !important;
+  }
+
+  th{
+    background-color: var(--primary-text-text);
+  }
+  td {
+    background-color: var(--secondry-background);
+  }
+  
+  thead {
+    background-color: var(--primary-text);
+    color: var(--primary-text-text);
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: var(--main-background);
+  }
+  
+  tr:hover td {
+    background-color: var(--primary-text-text);
+  }
+  
+  /* Amenities List */
+  ul {
+    padding-left: 20px;
+  }
+  
+  ul li {
+    margin: 5px 0;
+    background-color: var(--secondry-background);
+    color: var(--secondry-text);
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+    border-left: 4px solid var(--primary-text);
+  }

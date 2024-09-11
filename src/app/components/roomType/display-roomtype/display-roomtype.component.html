@@ -1,0 +1,42 @@
+<div *ngIf="loading" class="loading-spinner">
+  Loading...
+</div>
+<div class="container" *ngIf="!loading">
+    <div class="d-flex justify-content-between">
+      <button class="btn btn-primary back" (click)="goBack()">
+        <i class="bi bi-arrow-left"></i> Back
+      </button>
+      <button class="btn btn-primary" [routerLink]="['/roomtype/create']">Create Room Type</button>
+    </div>
+    <!-- Room Types List -->
+    <div *ngIf="!showForm">
+      <h2>Available Room Types</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Type Name</th>
+            <th>Description</th>
+            <th>Max Occupancy</th>
+            <th>Price per Night</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let roomType of roomTypes; let i = index">
+            <td>{{ roomType.type_name }}</td>
+            <td>{{ roomType.description }}</td>
+            <td>{{ roomType.max_occupancy }}</td>
+            <td>{{ roomType.price_per_night | currency }}</td>
+            <td >
+              <button [routerLink]="['/roomtype/edit', roomType.room_type_id]" class="btn btn-info">Edit</button>
+            </td>
+            <td>
+              <button (click)="deleteById(roomType.room_type_id)" class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

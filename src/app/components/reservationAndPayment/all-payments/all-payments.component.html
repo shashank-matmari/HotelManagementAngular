@@ -1,0 +1,24 @@
+<div class="container">
+  <table class="table table-striped table-hover fade-in-table">
+    <thead>
+      <tr>
+        <th scope="col">PAYMENTID</th>
+        <th scope="col">RESERVATION_ID</th>
+        <th scope="col">AMOUNT</th>
+        <th scope="col">PAYMENT_DATE</th>
+        <th scope="col">PAYMENT_STATUS</th>
+        <th scope="col">PAYMENT_TYPE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let paymen of payments" class="fade-in">
+        <td>{{paymen.payment_id}}</td>
+        <td>{{ paymen.reservation.reservation_id }}</td>
+        <td>{{ paymen.amount}}</td>
+        <td>{{ paymen.payment_date}}</td>
+        <td>{{ paymen.payment_status}}</td> 
+        <td>{{ paymen.payment_type}}</td> 
+      </tr>
+    </tbody>
+  </table>
+</div>  

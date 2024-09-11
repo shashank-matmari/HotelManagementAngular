@@ -1,0 +1,146 @@
+.profile-div{
+  background-color: var(--main-background);
+  height: 90.8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  margin-right: 10px;
+}
+
+.back-btn:hover {
+  color: #ffcc00;
+}
+
+.profile-container {
+  min-width: 40vw;
+  max-width: 600px;
+  /* margin: 50px auto; */
+  background: var(--secondry-background);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  color: var(--secondry-text);
+  font-family: 'Roboto', sans-serif;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0 !important;
+  color: var(--primary-text);
+}
+
+.edit-btn {
+  background: var(--btn-color1);
+  border: none;
+  color: var(--secondry-text);
+  font-size: 1rem;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.edit-btn:hover {
+  background: var(--btn2-hover);
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 16px;
+  color: var(--primary-text);
+  margin-bottom: 8px;
+}
+
+.form-control {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: var(--main-background);
+  color: var(--secondry-text);
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--primary-text);
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.2);
+}
+
+.password-group {
+  position: relative;
+}
+
+.password-container {
+  display: flex;
+}
+
+.show-password-btn {
+  background: none;
+  border: none;
+  color: var(--primary-text);
+  cursor: pointer;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.btn {
+  padding: 12px 20px;
+  background: var(--btn-color2);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary {
+  background: var(--btn-color2);
+}
+
+.btn-primary:hover {
+  background: var(--btn2-hover);
+  box-shadow: 0 4px 10px rgba(255, 69, 0, 0.3);
+}
+
+.loading-spinner,
+.error-message {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.loading-spinner {
+  color: var(--primary-text);
+  font-size: 1.5rem;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 1.2rem;
+}

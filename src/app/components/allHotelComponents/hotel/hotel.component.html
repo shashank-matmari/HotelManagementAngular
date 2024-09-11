@@ -1,0 +1,11 @@
+<div class="hotel-card" (click)="openHotelDetails(hotel.hotel_id)">
+    <img [src]="hotel.img" alt="Hotel Image">
+    <div class="hotel-card-content">
+        <h3 class="hotel-card-title">{{ hotel.name }}</h3>
+        <p class="hotel-card-description">{{ hotel.description }}</p>
+        <div class="hotel-card-actions">
+            <!-- <button (click)="updateHotel(hotel.id)">Edit</button>
+            <button (click)="deleteHotel(hotel.id)">Delete</button> -->
+        </div>
+    </div>
+</div>

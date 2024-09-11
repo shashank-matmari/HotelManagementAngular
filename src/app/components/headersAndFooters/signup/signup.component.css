@@ -1,0 +1,103 @@
+.signup-container {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--main-background) !important;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #c2b5b5;
+  margin-right: 10px;
+}
+
+.back-btn:hover {
+  color: #ffcc00;
+}
+
+/* Form Styling */
+.form-container {
+  width: 50vw;
+  background-color: var(--secondry-background); /* Secondary background color */
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: 1px solid #444;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Form Hover Effect */
+.form-container:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.text-center{
+  color: var(--secondry-text);
+}
+
+/* Input Fields */
+input.form-control, select.form-select {
+  background-color: var(--main-background); /* Dark background */
+  color: var(--secondry-text); /* White text */
+  border-radius: 0.5rem;
+  border: 1px solid #333;
+  padding: 12px 15px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Focus */
+input.form-control:focus, select.form-select:focus {
+  border-color: var(--primary-text); /* Yellow border color on focus */
+  box-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
+  outline: none;
+}
+
+input::placeholder{
+  color: var(--secondry-text);
+  opacity: 0.3;
+}
+
+/* Labels */
+.form-label {
+  color: var(--primary-text); /* Yellow label color */
+  font-size: 1rem;
+}
+
+/* Error Messages */
+.text-danger {
+  font-size: 0.9rem;
+  color: #ff6b6b;
+  margin-top: 0.25rem;
+}
+
+/* Submit Button */
+button.btn-primary {
+  background-color: var(--btn-color1);
+  border-color: var(--btn-color1);
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  color: var(--secondry-text); /* Button text color */
+}
+
+/* Button Hover */
+button.btn-primary:hover {
+  background-color: var(--btn-color2);
+  border-color: var(--btn2-hover);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+}

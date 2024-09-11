@@ -1,0 +1,113 @@
+/* Container styling */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--secondry-background);
+    /* Dark secondary background */
+    color: var(--secondry-text);
+    /* White text */
+}
+
+/* Back button */
+.back-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #979292;
+    margin-right: 10px;
+}
+
+.back-btn:hover {
+    color: #ffcc00;
+}
+
+/* Title styling */
+.title {
+    text-align: center;
+    color: var(--primary-text);
+    /* Yellow */
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* Card styling */
+.card {
+    background-color: var(--main-background);
+    /* Dark main background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    color: var(--secondry-text);
+}
+
+/* Card header styling */
+.card-header {
+    padding: 20px;
+    border-bottom: 1px solid #444;
+    background-color: var(--primary-text);
+    /* Yellow */
+    color: var(--primary-text-text);
+    /* Dark text */
+    border-radius: 8px 8px 0 0;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Card body styling */
+.card-body {
+    padding: 20px;
+    background-color: var(--secondry-background);
+    /* Secondary background */
+    border-radius: 0 0 8px 8px;
+}
+
+/* Section styling */
+.section {
+    margin-bottom: 20px;
+    background-color: #333;
+    /* Darker section background */
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.section h3 {
+    color: var(--primary-text);
+    /* Yellow */
+    border-bottom: 2px solid var(--primary-text);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+}
+
+/* Detail item styling */
+.detail-item {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.detail-item strong {
+    color: var(--primary-text);
+    /* Yellow for labels */
+}
+
+/* Amenities styling */
+.amenity-item {
+    border-top: 1px solid #555;
+    padding: 10px 0;
+}
+
+.amenity-item:last-child {
+    border-bottom: 1px solid #555;
+}
+
+/* Add color to the details-div */
+.reservation-div {
+    background-color: var(--main-background);
+    /* Dark background for the entire div */
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}

@@ -1,0 +1,66 @@
+<button class="back-btn" (click)="goBack()">
+  <i class="bi bi-arrow-left"></i>
+</button>
+<div class="background-container">
+  <div class="form-container">
+    <form [formGroup]="hotelForm" (ngSubmit)="onSubmit()" class="hotel-form">
+      
+      <!-- Hotel Name -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name" placeholder="Enter hotel name" aria-required="true" />
+        <div *ngIf="hotelForm.get('name')?.touched && hotelForm.get('name')?.invalid" class="error">
+          Name is required.
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input id="location" type="text" formControlName="location" placeholder="Enter location" aria-required="true" />
+        <div *ngIf="hotelForm.get('location')?.touched && hotelForm.get('location')?.invalid" class="error">
+          Location is required.
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" placeholder="Enter hotel description"></textarea>
+        <div *ngIf="hotelForm.get('description')?.touched && hotelForm.get('description')?.invalid" class="error">
+          Description can be up to 500 characters.
+        </div>
+      </div>
+
+      <!-- Amenities -->
+      <div formArrayName="amenities">
+        <h3>Amenities</h3>
+        <div *ngFor="let amenity of amenities.controls; let i = index" [formGroupName]="i" class="form-group">
+          <label for="amenity-id-{{ i }}">Amenity Id</label>
+          <input id="amenity-id-{{ i }}" formControlName="amenity_id" type="text" placeholder="Enter amenity id"
+            aria-required="true" class="mb-4"/>
+          <button type="button" (click)="removeAmenity(i)" class="remove-btn">Remove Amenity</button>
+        </div>
+        <button type="button" (click)="addAmenity()" class="add-btn">Add Amenity</button>
+      </div>
+
+      <!-- Rooms -->
+      <div formArrayName="rooms">
+        <h3>Rooms</h3>
+        <div *ngFor="let room of rooms.controls; let i = index" [formGroupName]="i" class="form-group">
+          <label for="room-number-{{ i }}">Room Number</label>
+          <input id="room-number-{{ i }}" formControlName="room_number" type="text" placeholder="Enter room number"
+            aria-required="true" />
+          <label for="room-type-{{ i }}" class="mt-3 mb-3">Room Type id</label>
+          <input id="room-type-{{ i }}" formControlName="room_type_id" type="text" placeholder="Enter room type id"
+            aria-required="true" class="mb-5"/>
+          <button type="button" (click)="removeRoom(i)" class="remove-btn">Remove Room</button>
+        </div>
+        <div class="button-group">
+          <button type="button" (click)="addRoom()" class="add-btn mb-4">Add Room</button>
+        </div>
+        <button type="submit" class="submit-btn">Submit Hotel</button>
+      </div>
+    </form>
+  </div>
+</div>

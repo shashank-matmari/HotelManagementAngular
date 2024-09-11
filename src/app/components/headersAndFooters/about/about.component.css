@@ -1,0 +1,54 @@
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .img {
+    width: 35vw;
+    height: 35vh;
+    object-fit: cover; /* Ensures the image maintains its aspect ratio and fits within the dimensions */
+    }
+
+  .slider-container {
+    flex: 1;
+    max-width: 400px;
+    margin-right: 2rem;
+  }
+  
+  .slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .slider .slide {
+    display: none;
+    width: 100%;
+  }
+  
+  .slider .slide img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .slider .slide.active {
+    display: block;
+  }
+  
+  .about-content {
+    flex: 1;
+  }
+  
+  .about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  

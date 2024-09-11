@@ -1,0 +1,65 @@
+<p>update-reservation works!</p>
+<div style="background-color: #e0f0ff;">
+    <button class="btn btn-outline-primary" (click)="goback()">Go Back</button>
+<div class="container" style="width: 500px;" *ngIf="reservation">
+    <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+        <div class="from-group">
+            <label for="hotelName">Hotel Name:</label>
+            <input id="hotelName" formControlName="hotel_name" class="form-control">
+            <div class="error" *ngIf="reservationForm.get('hotel_name')?.invalid && reservationForm.get('hotel_name')?.touched">Hotel Name
+                is required</div>
+        </div>
+
+        <div class="from-group">
+            <label for="name">Name:</label>
+            <input id="name" formControlName="guest_name" class="form-control">
+            <div class="error" *ngIf="reservationForm.get('guest_name')?.invalid && reservationForm.get('guest_name')?.touched">Name
+                is required</div>
+        </div>
+
+        <div class="from-group">
+            <label for="phoneNumber">Phone Number:</label>
+            <input id="phoneNumber" formControlName="guest_phone" class="form-control">
+            <div class="error" *ngIf="reservationForm.get('guest_phone')?.invalid && reservationForm.get('guest_phone')?.touched">
+               Phone number is required</div>
+        </div>
+
+        <div class="from-group">
+            <label for="emailId">Email ID:</label>
+            <input id="emailId" formControlName="guest_email" class="form-control">
+            <div class="error" *ngIf="reservationForm.get('guest_email')?.invalid && reservationForm.get('guest_email')?.touched">
+                Email Id is required</div>
+        </div>
+
+        <div class="from-group">
+            <label for="checkInDate">Check-In Date:</label>
+            <input id="checkInDate" type="datetime" formControlName="check_in_date" class="form-control">
+            <div class="error" *ngIf="reservationForm.get('check_in_date')?.invalid && reservationForm.get('check_in_date')?.touched">
+                Check-In date is required</div>
+        </div>
+
+        <div class="from-group">
+            <label for="checkOutDate">Check-Out Date:</label>
+            <input id="checkOutDate" type="datetime " formControlName="check_out_date" class="form-control">
+            <div class="error" *ngIf="reservationForm.get('check_out_date')?.invalid && reservationForm.get('check_out_date')?.touched">
+                Check-Out date is required</div>
+        </div>
+
+        <div class="from-group">
+            <label for="roomId">Room ID:</label>
+            <input id="roomId" formControlName="room_id" class="form-control" readonly>
+            <div class="error" *ngIf="reservationForm.get('room_id')?.invalid && reservationForm.get('room_id')?.touched">
+                Room Id is required</div>
+        </div>
+
+        <div class="from-group">
+            <label for="amount">Amount:</label>
+            <input id="amount" formControlName="amount" class="form-control">
+            <div class="error" *ngIf="reservationForm.get('amount')?.invalid && reservationForm.get('amount')?.touched">
+                Amount is required</div>
+        </div >
+
+        <button class="btn btn-primary" type="submit" [disabled]="reservationForm.invalid">Submit</button>
+    </form>
+</div>
+</div>
